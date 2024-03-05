@@ -96,8 +96,11 @@ ret
 ## Subtraction   of 8 bit numbers  ALP 
 
 mov al,56h
+
 mov bl,45
+
 sub al,bl
+
 ret
  
 ## Output  
@@ -107,8 +110,11 @@ ret
 ## Multiplication alp 
 
 mov al,45
+
 mov bl,56
+
 mul bl
+
 ret
 
  ## Output  
@@ -119,8 +125,11 @@ ret
 ## Division alp 
 
 mov al,45h
+
 mov bl,56h
+
 mul bl
+
 ret
 
 ## Output  
