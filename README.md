@@ -138,6 +138,50 @@ ret
 
 ![Screenshot (236)](https://github.com/maha712/EXPERIMENT--01-ALP-FOR-8086/assets/121156360/f9c49ac3-ac36-4c44-a25f-42b069889e93)
 
+
+PROGRAM FOR LOGICAL  OPERATION:
+
+
+org 100H  
+
+MOV SI,0532H;
+
+MOV AX,0A32H;
+
+MOV BX,0B13H;
+
+OR AX,BX;
+
+MOV [SI],AX;
+
+MOV AX,0A32H;
+
+MOV BX,0B13H;
+
+AND AX,BX; 
+
+MOV [SI+2],AX;
+
+MOV AX,0A32H;
+
+MOV BX,0B13H; 
+
+XOR AX,BX;    
+
+MOV [SI+4],AX;
+
+MOV AX,0A32H;
+
+NOT AX; 
+
+MOV [SI+6],AX;
+
+ret 
+
+OUTPUT:
+![pmc](https://github.com/maha712/EXPERIMENT--01-ALP-FOR-8086/assets/121156360/48b161e1-b2cd-4fb3-b68f-ae14d0d9a45d)
+
+
 ## Result :
  Thus, a program is executed on ALP for the fundamental arithmetic and logical operations.
 
