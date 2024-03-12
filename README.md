@@ -179,7 +179,8 @@ MOV [SI+6],AX;
 ret 
 
 OUTPUT:
-![pmc](https://github.com/maha712/EXPERIMENT--01-ALP-FOR-8086/assets/121156360/48b161e1-b2cd-4fb3-b68f-ae14d0d9a45d)
+
+![Screenshot (256)](https://github.com/maha712/EXPERIMENT--01-ALP-FOR-8086/assets/121156360/a982f3a7-bf63-4f39-9a46-cb880af3a992)
 
 
 ## Result :
