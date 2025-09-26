@@ -75,79 +75,168 @@ Running The Emulator (emu8086) Intro 8086 Microprocessor Emulator, also known as
 ## Programs for arithmetic  operations
 
 ## Addition  of 8 bit ALP 
-
 ```
-mov al,34h
-mov bl,84h
-add al,bl
-ret
+MOV CL,00
+MOV AX,[3001H]
+MOV BX,[3003H]
+ADD AX,BX
+JNC Loop
+INC CL
+Loop:
+MOV [3005H],AX
+MOV [3007H],CL
+HLT
 ```
 ## Output 
 
-![Screenshot (233)](https://github.com/maha712/EXPERIMENT--01-ALP-FOR-8086/assets/121156360/0c5c4ba7-dd7d-4d5e-8144-28ae0307398b)
+<img width="2559" height="1599" alt="1" src="https://github.com/user-attachments/assets/d71a79ad-81cd-48f8-a369-57870bce26cd" />
 
  
 ## Subtraction   of 8 bit numbers  ALP 
 ```
-mov al,56h
-mov bl,45
-sub al,bl
-ret
+MOV CL,00
+MOV AX,[3001H]
+MOV BX,[3003H]
+SUB AX,BX
+JNC Loop
+INC CL  
+NOT AX
+INC AX
+Loop:
+MOV [3005H],AX
+MOV [3007H],CL
+HLT      
+
+
 ```
  
 ## Output  
 
-![Screenshot (234)](https://github.com/maha712/EXPERIMENT--01-ALP-FOR-8086/assets/121156360/26337e53-5d2c-4a17-8dbe-6a66d05358f3)
+<img width="2555" height="1599" alt="2" src="https://github.com/user-attachments/assets/5f451438-7c0e-476c-b2e9-056f924994a1" />
+
 
 ## Multiplication alp 
 ```
-mov al,45
-mov bl,56
-mul bl
-ret
+MOV AX,[3001H]
+MOV BX,[3003H]
+MUL BX
+MOV [3005H],AX
+MOV [3007H],DX
+HLT
 ```
  ## Output  
  
-![Screenshot (235)](https://github.com/maha712/EXPERIMENT--01-ALP-FOR-8086/assets/121156360/61892747-c1bc-4355-a827-2daa30decf6c)
+<img width="2557" height="1599" alt="3" src="https://github.com/user-attachments/assets/b5b61ed4-316f-4bfe-91cd-1a83465a6418" />
 
 
 ## Division alp 
 ```
-mov al,45h
-mov bl,56h
-mul bl
-ret
+MOV AX,[3001H]
+MOV BX,[3003H]
+DIV BX
+MOV [3005H],AX
+MOV [3007H],DX
+HLT
 ```
 ## Output  
 
-![Screenshot (236)](https://github.com/maha712/EXPERIMENT--01-ALP-FOR-8086/assets/121156360/f9c49ac3-ac36-4c44-a25f-42b069889e93)
+<img width="1028" height="630" alt="Screenshot (4)" src="https://github.com/user-attachments/assets/c86f93fb-8fc9-4603-a67e-96b9463a809e" />
 
 
-PROGRAM FOR LOGICAL  OPERATION:
+LOGICAL OPERATIONS
+TRUTH TABLE FOR LOGICAL OPERATIONS
 
+AND 
 ```
-org 100H  
-MOV SI,0532H;
-MOV AX,0A32H;
-MOV BX,0B13H;
-OR AX,BX;
-MOV [SI],AX;
-MOV AX,0A32H;
-MOV BX,0B13H;
-AND AX,BX; 
-MOV [SI+2],AX;
-MOV AX,0A32H;
-MOV BX,0B13H; 
-XOR AX,BX;    
-MOV [SI+4],AX;
-MOV AX,0A32H;
-NOT AX; 
-MOV [SI+6],AX;
-ret 
+MOV AX,[3001H]
+MOV BX,[3003H]
+AND AX,BX
+MOV [3005H],AX
+HLT
 ```
+
 OUTPUT:
 
-![Screenshot (256)](https://github.com/maha712/EXPERIMENT--01-ALP-FOR-8086/assets/121156360/a982f3a7-bf63-4f39-9a46-cb880af3a992)
+<img width="1012" height="620" alt="Screenshot (5)" src="https://github.com/user-attachments/assets/052fd81d-4fc8-40c8-93bf-9eac283f0e54" />
+
+OR alp
+```
+MOV AX,[3001H]
+MOV BX,[3003H]
+OR AX,BX
+MOV [3005H],AX
+HLT
+```
+Output:
+
+<img width="991" height="634" alt="Screenshot (6)" src="https://github.com/user-attachments/assets/547f9ef8-e5b4-45c0-a729-db53b2024ff0" />
+
+NAND alp:
+```
+MOV AX,[3001H]
+MOV BX,[3003H]
+AND AX,BX
+NOT AX
+MOV [3005H],AX
+HLT
+```
+
+OUTPUT
+
+<img width="1032" height="639" alt="Screenshot (7)" src="https://github.com/user-attachments/assets/53969f63-9804-4761-84a7-de00cf194a0a" />
+
+NOR alp
+```
+MOV AX,[3001H]
+MOV BX,[3003H]
+OR AX,BX
+NOT AX
+MOV [3005H],AX
+HLT
+```
+
+OUTPUT
+
+<img width="1031" height="638" alt="Screenshot (8)" src="https://github.com/user-attachments/assets/1fe0a4ad-fd3c-4069-817e-f6ab6d32a213" />
+
+NOT alp
+```
+MOV AX,[3001H]
+MOV BX,[3003H]
+NOT AX
+MOV [3005H],AX
+HLT
+```
+OUTPUT
+
+<img width="1036" height="638" alt="Screenshot (9)" src="https://github.com/user-attachments/assets/b517cac6-222e-4e72-aa41-b4cd8aef5254" />
+
+XOR alp
+```
+MOV AX,[3001H]
+MOV BX,[3003H]
+XOR AX,BX
+MOV [3005H],AX
+HLT
+```
+
+OUTPUT
+
+
+
+XNOR alp
+```
+MOV AX,[3001H]
+MOV BX,[3003H]
+XOR AX,BX
+NOT AX
+MOV [3005H],AX
+HLT
+```
+
+output
+
+<img width="1038" height="639" alt="Screenshot (11)" src="https://github.com/user-attachments/assets/f6c2e15d-6f74-498e-b914-f10ae5622b85" />
 
 
 ## Result :
